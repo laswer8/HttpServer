@@ -1,2 +1,7 @@
 # HttpServer
 适用于Linux环境下的轻量级HTTP服务器，能够解析GET请求和POST请求，支持静态资源访问和动态资源访问
+
+1、网络事件分发，使用epoll和pthread库完成reactors模型，读取用户连接，并添加到子reactor中持续监听
+1、http报文解析，分析报文类型，调用响应处理函数，使用nlohann/json库解析JSON内容
+2、实现数据库缓存，使用hiredis与MySQLclient库实现连接池，并使用连接池进一步封装数据库缓存，提高查询效率
+3、实现线程池与对象池，使用pthread，mutex完成线程池，malloc实现对象池，减少系统开销，在线程池中使用阻塞队列实现任务队列
