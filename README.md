@@ -1,0 +1,2 @@
+# HttpServer
+适用于Linux环境下的轻量级HTTP服务器，能够解析GET请求和POST请求，支持静态资源访问和动态资源访问
